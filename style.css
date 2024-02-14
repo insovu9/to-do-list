@@ -39,3 +39,16 @@ body{
     justify-content: space-between;
     padding:1em;
 }
+
+.task-done{text-decoration: line-through;
+    }
+
+.task-donebox{
+    display: flex;
+    justify-content: space-between;
+    padding:1em;
+    background-color: gray;
+}
+.fa-solid fa-check{
+    background-color: red;
+}
