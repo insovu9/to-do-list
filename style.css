@@ -1,54 +1,74 @@
-body{
-    margin:0;
-    background-image: url("images/background.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
+/* CSS 코드 */
+body {
+  margin: 0;
+  background-image: url("images/background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.container{
-    background-color: white;
-    min-height: 100vh;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-}
-.task-area{
-    border:1px solid lightgray;
-    margin-top: 2em;
-}
-.task-tabs{
-    display: flex;
-    border-bottom:1px solid lightgray;    
-    position: relative;
+.container {
+  text-align: center;
+  background-color: white;
+  min-height: 100vh;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  padding-top: 3em; /* 제목 위쪽에 2em의 여백 추가 */
 }
 
-.task-tabs div{
-    padding: 1em;
+.task-area {
+  border: 1px solid lightgray;
+  margin-top: 2em;
 }
 
-#under-line{
-    height: 4px;
-    background-color: pink;
-    position: absolute;
-    width: 70px;
-    left: 0px;
-    top:52px;
-    padding:0px;
-
-}
-.task{
-    display: flex;
-    justify-content: space-between;
-    padding:1em;
+.task-tabs {
+  display: flex;
+  border-bottom: 1px solid lightgray;
+  position: relative;
+  justify-content: space-between;
+  padding: 0 140px; /* 왼쪽과 오른쪽에 각각 100px 여백 추가 */
 }
 
-.task-done{text-decoration: line-through;
-    }
-
-.task-donebox{
-    display: flex;
-    justify-content: space-between;
-    padding:1em;
-    background-color: gray;
+.task-tabs div {
+  padding: 1em;
+  cursor: pointer;
 }
-.fa-solid fa-check{
-    background-color: red;
+
+#under-line {
+  height: 4px;
+  background-color: pink;
+  position: absolute;
+  width: 70px;
+  left: auto;
+  top: 52px;
+  padding: 0px;
+  transition: width 0.3s ease; /* 호버 시에 부드럽게 확장되도록 추가 */
+}
+
+/* 각 탭에 호버 시 밑줄 확장 */
+#all:hover ~ #under-line,
+#ongoing:hover ~ #under-line,
+#done:hover ~ #under-line {
+  width: 25%;
+}
+
+.task {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+}
+
+.task-done {
+  text-decoration: line-through;
+}
+
+.task-donebox {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+  background-color: gray;
+}
+
+.spacer {
+  flex-grow: 1; /* 남은 공간을 모두 차지하도록 설정 */
 }
